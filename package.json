@@ -1,0 +1,28 @@
+{
+  "name": "web-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start-dev": "node .",
+    "start": "pm2 start src/index.js --name=web-backend -o logs/info.log -e logs/error.log --log-date-format \"DD-MM-YYYY HH:mm:ss\"",
+    "deploy": "npm i && pm2 delete -s web-backend || ':' && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceCore-Dev/web-backend.git"
+  },
+  "author": "JCat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpaceCore-Dev/web-backend/issues"
+  },
+  "homepage": "https://github.com/SpaceCore-Dev/web-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5"
+  }
+}
