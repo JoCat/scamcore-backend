@@ -1,4 +1,4 @@
-const getServers = require("../../helpers/getServers")
+const getServers = require("../helpers/getServers")
 
 async function getTranslate(req, res) {
     const [vds] = await getServers('vds')

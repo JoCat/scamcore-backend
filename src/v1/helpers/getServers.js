@@ -1,4 +1,4 @@
-const DB = require('./DBHelper')
+const Server = require("../models/Server")
 
 module.exports = async function(type) {
     return await DB.query(

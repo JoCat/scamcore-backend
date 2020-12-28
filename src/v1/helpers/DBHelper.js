@@ -1,12 +1,15 @@
-const mysql = require('mysql2/promise')
 const db_config = require('../config.js').db
+const { Sequelize } = require('sequelize')
 
-const connect = mysql.createPool({
-    host: db_config.host,
-    user: db_config.user,
-    password: db_config.password,
+const connect = new Sequelize({
     database: db_config.database,
-    // timezone: '+03:00'
+    username: db_config.user,
+    password: db_config.password,
+    host: db_config.host,
+    dialect: 'mysql',
+    define: {
+        underscored: true
+    } 
 })
 
 module.exports = connect
