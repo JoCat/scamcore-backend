@@ -1,21 +1,13 @@
 const { DataTypes } = require('sequelize')
 const BaseTranslate = require('./Base')
 
-const DomainTranslate = BaseTranslate('DomainTranslate', {
+const WebHostTranslate = BaseTranslate('WebHostTranslate', {
     title: {
         type: DataTypes.STRING,
         allowNull: false
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    storage: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    sites: {
-        type: DataTypes.INTEGER,
         allowNull: false
     },
     features: {
@@ -28,4 +20,4 @@ const DomainTranslate = BaseTranslate('DomainTranslate', {
     }
 })
 
-module.exports = DomainTranslate
+module.exports = WebHostTranslate
