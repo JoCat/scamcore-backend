@@ -3,6 +3,7 @@ const sequelize = require('../helpers/DBHelper')
 const ISPLicenseTranslate = require('./translate/ISPLicense')
 
 const ISPLicense = sequelize.define('IspLicense', {})
+
 ISPLicense.hasMany(ISPLicenseTranslate)
 ISPLicenseTranslate.belongsTo(ISPLicense)
 

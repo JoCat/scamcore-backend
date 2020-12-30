@@ -6,25 +6,30 @@ const Server = sequelize.define('Server', {
         type: DataTypes.ENUM('vds', 'dedicated', 'not-install'),
         allowNull: false
     },
-    priceRu: {
-        type: DataTypes.FLOAT,
+    cpuCoresCount: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    priceUa: {
-        type: DataTypes.FLOAT,
+    ram: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    priceEn: {
-        type: DataTypes.FLOAT,
+    traffic: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    cpu: DataTypes.STRING,
-    ram: DataTypes.STRING,
-    storage: DataTypes.STRING,
-    traffic: DataTypes.STRING,
-    ddos: DataTypes.STRING,
-    geekbench: DataTypes.INTEGER.UNSIGNED,
-    geekbenchMultithread: DataTypes.INTEGER.UNSIGNED,
+    ddos: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    geekbench: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    geekbenchMultithread: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 })
 
 module.exports = Server
