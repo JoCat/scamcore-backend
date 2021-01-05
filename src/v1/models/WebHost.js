@@ -1,8 +1,6 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../helpers/DBHelper')
 
-const WebHostTranslate = require('./translate/WebHost')
-
 const WebHost = sequelize.define('WebHost', {
     storage: {
         type: DataTypes.STRING,
@@ -13,6 +11,8 @@ const WebHost = sequelize.define('WebHost', {
         allowNull: false
     },
 })
+
+const WebHostTranslate = require('./translate/WebHost')
 
 WebHost.hasMany(WebHostTranslate)
 WebHostTranslate.belongsTo(WebHost)

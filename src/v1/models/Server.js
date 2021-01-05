@@ -32,4 +32,18 @@ const Server = sequelize.define('Server', {
     },
 })
 
+const ServerTranslate = require('./translate/Server')
+
+Server.hasMany(ServerTranslate)
+ServerTranslate.belongsTo(Server)
+
+const ServerCPU = require('./ServerCPU')
+const ServerStorage = require('./ServerStorage')
+
+Server.hasMany(ServerCPU)
+ServerCPU.belongsTo(Server)
+
+Server.hasMany(ServerStorage)
+ServerStorage.belongsTo(Server)
+
 module.exports = Server
