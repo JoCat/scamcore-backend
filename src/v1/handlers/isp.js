@@ -1,11 +1,10 @@
-const express = require('express')
-const ErrorHelper = require('../helpers/ErrorHelper')
+const { Request, Response } = require('express')
 const ISPLicense = require('../models/ISPLicense')
 const ISPLicenseTranslate = require('../models/translate/ISPLicense')
 
 /**
- * @param {express.Request} req 
- * @param {express.Response} res 
+ * @param {Request} req 
+ * @param {Response} res 
  */
 async function getLicense(req, res) {
     const isp = await ISPLicense.findAll({ include: ISPLicenseTranslate })

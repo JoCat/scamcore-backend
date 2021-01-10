@@ -8,7 +8,8 @@ const connect = new Sequelize({
     host: db_config.host,
     dialect: 'mysql',
     define: {
-        underscored: true
+        underscored: true,
+        timestamps: false
     } 
 })
 

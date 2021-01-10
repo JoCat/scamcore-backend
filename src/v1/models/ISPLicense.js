@@ -1,11 +1,10 @@
 const sequelize = require('../helpers/DBHelper')
 
-const ISPLicense = sequelize.define('IspLicense', {})
+const ISPLicense = sequelize.define('IspLicense')
 
 const ISPLicenseTranslate = require('./translate/ISPLicense')
 
 ISPLicense.hasMany(ISPLicenseTranslate)
-ISPLicenseTranslate.belongsTo(ISPLicense)
 
 // ISPLicense.create();
 

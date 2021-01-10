@@ -13,3 +13,10 @@ const ServerStorage = sequelize.define('ServerStorage', {
 })
 
 module.exports = ServerStorage
+
+/* test */
+
+// ServerStorage.create({
+//     type: 'ssd',
+//     capacity: 500
+// })

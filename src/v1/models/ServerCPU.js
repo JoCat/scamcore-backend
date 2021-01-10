@@ -15,6 +15,5 @@ const ServerCPU = sequelize.define('ServerCpu', {
 })
 
 ServerCPU.hasMany(ServerCPUTranslate)
-ServerCPUTranslate.belongsTo(ServerCPU)
 
 module.exports = ServerCPU

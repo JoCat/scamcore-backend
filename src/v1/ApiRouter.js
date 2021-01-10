@@ -42,7 +42,7 @@ apiv1.map({
         use: langMiddleware,
         '/isp': require('./handlers/isp'),
 
-        // '/vds': require('./handlers/vds'),
+        '/vds': require('./handlers/vds'),
         // '/dedicated': require('./handlers/dedicated'),
         // '/not-install': require('./handlers/not-install')
     }

@@ -15,6 +15,5 @@ const WebHost = sequelize.define('WebHost', {
 const WebHostTranslate = require('./translate/WebHost')
 
 WebHost.hasMany(WebHostTranslate)
-WebHostTranslate.belongsTo(WebHost)
 
 module.exports = WebHost
