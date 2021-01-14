@@ -1,9 +1,11 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../helpers/DBHelper')
 
-const ServerCPUTranslate = require('./translate/ServerCPU')
-
 const ServerCPU = sequelize.define('ServerCpu', {
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     frequency: {
         type: DataTypes.FLOAT,
         allowNull: false
@@ -13,7 +15,5 @@ const ServerCPU = sequelize.define('ServerCpu', {
         allowNull: false
     }
 })
-
-ServerCPU.hasMany(ServerCPUTranslate)
 
 module.exports = ServerCPU

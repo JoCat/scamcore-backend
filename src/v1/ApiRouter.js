@@ -7,6 +7,7 @@ const apiv1 = express.Router();
     try {
         await DB.authenticate()
         await DB.sync()
+        // require('./tests')
         console.log('Connection has been established successfully.')
     } catch (error) {
         console.error('Unable to connect to the database:', error)
@@ -41,10 +42,7 @@ apiv1.map({
     '/:lang': {
         use: langMiddleware,
         '/isp': require('./handlers/isp'),
-
-        '/vds': require('./handlers/vds'),
-        // '/dedicated': require('./handlers/dedicated'),
-        // '/not-install': require('./handlers/not-install')
+        '/servers': require('./handlers/servers'),
     }
 });
 
