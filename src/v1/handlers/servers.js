@@ -41,9 +41,13 @@ async function getServers(req, res, type) {
         r.cpu = cpus.find(c => c.id === r.ServerCpuId).toJSON()
         delete r.ServerCpuId
 
-        r.group = groups
+        group = groups
             .find(c => c.id === r.ServerGroupId).toJSON()
-            .ServerGroupTranslates.find(e => e.lang === req.params.lang).title
+            .ServerGroupTranslates.find(e => e.lang === req.params.lang)
+        r.group = {
+            id: group.ServerGroupId,
+            title: group.title,
+        }
         delete r.ServerGroupId
 
         r.price = r.ServerTranslates.find(e => e.lang === req.params.lang).price
