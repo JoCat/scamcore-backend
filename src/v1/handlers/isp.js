@@ -8,7 +8,7 @@ const ISPLicenseTranslate = require('../models/translate/ISPLicense')
  */
 async function getLicense(req, res) {
     const isp = await ISPLicense.findAll({ include: ISPLicenseTranslate })
-//empty check
+
     const result = isp.map(e => {
         const t = e.IspLicenseTranslates.find(t => t.lang === req.params.lang)
         return {

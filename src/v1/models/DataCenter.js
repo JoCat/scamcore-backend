@@ -2,12 +2,12 @@ const { DataTypes } = require('sequelize')
 const sequelize = require('../helpers/DBHelper')
 
 const DataCenter = sequelize.define('DataCenter', {
-    img: {
+    images: {
         type: DataTypes.TEXT,
         allowNull: false
     },
     location: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false
     }
 })
