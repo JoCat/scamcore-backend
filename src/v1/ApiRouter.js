@@ -15,7 +15,7 @@ const apiv1 = express.Router();
 })()
 
 const langMiddleware = (req, res, next) => {
-    if (!['ru', 'ua', 'en'].includes(req.params.lang)) {
+    if (req.params.lang !== undefined && !['ru', 'ua', 'en'].includes(req.params.lang)) {
         res.status(400).json(ErrorHelper.error(0, 'lang nf'))
         return
     }
@@ -43,7 +43,8 @@ apiv1.map({
         use: langMiddleware,
         '/isp': require('./handlers/isp'),
         '/servers': require('./handlers/servers'),
-    }
+        '/reviews': require('./handlers/reviews'),
+    },
 });
 
 module.exports = apiv1
