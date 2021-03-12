@@ -44,7 +44,8 @@ apiv1.map({
         '/isp': require('./handlers/isp'),
         '/servers': require('./handlers/servers'),
         '/reviews': require('./handlers/reviews'),
-        '/data-centers': require('./handlers/data-centers')
+        '/data-centers': require('./handlers/data-centers'),
+        '/hosting': require('./handlers/hosting'),
     },
 });
 
