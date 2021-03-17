@@ -13,8 +13,10 @@ async function getLicense(req, res) {
         const t = e.IspLicenseTranslates.find(t => t.lang === req.params.lang)
         return {
             id: e.id,
+            productID: e.productId,
+            price: t.price,
             title: t.title,
-            price: t.price
+            description: t.description,
         }
     })
 

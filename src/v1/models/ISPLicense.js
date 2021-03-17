@@ -1,6 +1,12 @@
+const { DataTypes } = require('sequelize')
 const sequelize = require('../helpers/DBHelper')
 
-const ISPLicense = sequelize.define('IspLicense')
+const ISPLicense = sequelize.define('IspLicense', {
+    productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+})
 
 const ISPLicenseTranslate = require('./translate/ISPLicense')
 
