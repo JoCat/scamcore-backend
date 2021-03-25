@@ -13,6 +13,7 @@ async function getWebHosts(req, res) {
         const t = e.WebHostTranslates.find(t => t.lang === req.params.lang)
         return {
             id: e.id,
+            productID: e.productId,
             storage: e.storage,
             sites: e.sites,
             title: t.title,

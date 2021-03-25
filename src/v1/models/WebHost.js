@@ -10,6 +10,10 @@ const WebHost = sequelize.define('WebHost', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 })
 
 const WebHostTranslate = require('./translate/WebHost')
