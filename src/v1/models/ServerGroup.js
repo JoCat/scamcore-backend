@@ -1,9 +1,9 @@
-const sequelize = require('../helpers/DBHelper')
+const sequelize = require("../helpers/DBHelper");
 
-const ServerGroup = sequelize.define('ServerGroup')
+const ServerGroup = sequelize.define("ServerGroup");
 
-const ServerGroupTranslate = require('./translate/ServerGroup')
+const ServerGroupTranslate = require("./translate/ServerGroup");
 
-ServerGroup.hasMany(ServerGroupTranslate)
+ServerGroup.hasMany(ServerGroupTranslate);
 
-module.exports = ServerGroup
+module.exports = ServerGroup;

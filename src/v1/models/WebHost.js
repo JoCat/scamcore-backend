@@ -1,23 +1,23 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const WebHost = sequelize.define('WebHost', {
+const WebHost = sequelize.define("WebHost", {
     storage: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     sites: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     productId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-const WebHostTranslate = require('./translate/WebHost')
+const WebHostTranslate = require("./translate/WebHost");
 
-WebHost.hasMany(WebHostTranslate)
+WebHost.hasMany(WebHostTranslate);
 
-module.exports = WebHost
+module.exports = WebHost;

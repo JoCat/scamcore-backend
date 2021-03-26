@@ -1,19 +1,19 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const ServerCPU = sequelize.define('ServerCpu', {
+const ServerCPU = sequelize.define("ServerCpu", {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     frequency: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: false,
     },
     maxCores: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-module.exports = ServerCPU
+module.exports = ServerCPU;

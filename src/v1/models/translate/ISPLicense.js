@@ -1,19 +1,19 @@
-const { DataTypes } = require('sequelize')
-const BaseTranslate = require('./Base')
+const { DataTypes } = require("sequelize");
+const BaseTranslate = require("./Base");
 
-const ISPLicenseTranslate = BaseTranslate('IspLicenseTranslate', {
+const ISPLicenseTranslate = BaseTranslate("IspLicenseTranslate", {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     price: {
         type: DataTypes.FLOAT,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-module.exports = ISPLicenseTranslate
+module.exports = ISPLicenseTranslate;

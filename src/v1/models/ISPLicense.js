@@ -1,16 +1,16 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const ISPLicense = sequelize.define('IspLicense', {
+const ISPLicense = sequelize.define("IspLicense", {
     productId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-const ISPLicenseTranslate = require('./translate/ISPLicense')
+const ISPLicenseTranslate = require("./translate/ISPLicense");
 
-ISPLicense.hasMany(ISPLicenseTranslate)
+ISPLicense.hasMany(ISPLicenseTranslate);
 
 // ISPLicense.create();
 
@@ -35,4 +35,4 @@ ISPLicense.hasMany(ISPLicenseTranslate)
 //     price: 2.7
 // });
 
-module.exports = ISPLicense
+module.exports = ISPLicense;

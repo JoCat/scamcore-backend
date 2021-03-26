@@ -1,15 +1,15 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const ServerStorage = sequelize.define('ServerStorage', {
+const ServerStorage = sequelize.define("ServerStorage", {
     type: {
-        type: DataTypes.ENUM('hdd', 'ssd', 'nvme'),
-        allowNull: false
+        type: DataTypes.ENUM("hdd", "ssd", "nvme"),
+        allowNull: false,
     },
     capacity: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-module.exports = ServerStorage
+module.exports = ServerStorage;

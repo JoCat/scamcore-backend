@@ -1,11 +1,11 @@
-const { DataTypes } = require('sequelize')
-const BaseTranslate = require('./Base')
+const { DataTypes } = require("sequelize");
+const BaseTranslate = require("./Base");
 
-const ServerGroupTranslate = BaseTranslate('ServerGroupTranslate', {
+const ServerGroupTranslate = BaseTranslate("ServerGroupTranslate", {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-module.exports = ServerGroupTranslate
+module.exports = ServerGroupTranslate;

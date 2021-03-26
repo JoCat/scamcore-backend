@@ -2,9 +2,9 @@ class ErrorHelper {
     static error(code, message) {
         return {
             code,
-            message
-        }
+            message,
+        };
     }
 }
 
-module.exports = ErrorHelper
+module.exports = ErrorHelper;

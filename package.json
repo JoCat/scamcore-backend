@@ -7,7 +7,8 @@
   "scripts": {
     "start-dev": "node .",
     "start": "pm2 start src/index.js --name=web-backend -o logs/info.log -e logs/error.log --log-date-format \"DD-MM-YYYY HH:mm:ss\"",
-    "deploy": "npm i && pm2 delete -s web-backend || ':' && npm run start"
+    "deploy": "npm i && pm2 delete -s web-backend || ':' && npm run start",
+    "prettier": "prettier --write \"src/**/*.*\""
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }

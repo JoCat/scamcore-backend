@@ -1,19 +1,19 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const DataCenter = sequelize.define('DataCenter', {
+const DataCenter = sequelize.define("DataCenter", {
     images: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     location: {
         type: DataTypes.STRING,
-        allowNull: false
-    }
-})
+        allowNull: false,
+    },
+});
 
-const DataCenterTranslate = require('./translate/DataCenter')
+const DataCenterTranslate = require("./translate/DataCenter");
 
-DataCenter.hasMany(DataCenterTranslate)
+DataCenter.hasMany(DataCenterTranslate);
 
-module.exports = DataCenter
+module.exports = DataCenter;

@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize')
-const BaseTranslate = require('./Base')
+const { DataTypes } = require("sequelize");
+const BaseTranslate = require("./Base");
 
-const GameHostTranslate = BaseTranslate('GameHostTranslate')
+const GameHostTranslate = BaseTranslate("GameHostTranslate");
 
-module.exports = GameHostTranslate
+module.exports = GameHostTranslate;

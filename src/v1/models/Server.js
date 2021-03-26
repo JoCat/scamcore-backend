@@ -1,49 +1,49 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../helpers/DBHelper')
+const { DataTypes } = require("sequelize");
+const sequelize = require("../helpers/DBHelper");
 
-const Server = sequelize.define('Server', {
+const Server = sequelize.define("Server", {
     type: {
-        type: DataTypes.ENUM('vds', 'dedicated', 'not-install'),
-        allowNull: false
+        type: DataTypes.ENUM("vds", "dedicated", "not-install"),
+        allowNull: false,
     },
     cpuCoresCount: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     ram: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     traffic: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     ddos: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     geekbench: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     geekbenchMultithread: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-})
+});
 
-const ServerTranslate = require('./translate/Server')
+const ServerTranslate = require("./translate/Server");
 
-Server.hasMany(ServerTranslate)
+Server.hasMany(ServerTranslate);
 
-const ServerCPU = require('./ServerCPU')
-const ServerStorage = require('./ServerStorage')
-const ServerGroup = require('./ServerGroup')
+const ServerCPU = require("./ServerCPU");
+const ServerStorage = require("./ServerStorage");
+const ServerGroup = require("./ServerGroup");
 
-ServerCPU.hasMany(Server)
+ServerCPU.hasMany(Server);
 
-Server.hasMany(ServerStorage)
+Server.hasMany(ServerStorage);
 
-ServerGroup.hasMany(Server)
+ServerGroup.hasMany(Server);
 
-module.exports = Server
+module.exports = Server;
