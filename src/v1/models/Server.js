@@ -6,6 +6,10 @@ const Server = sequelize.define("Server", {
         type: DataTypes.ENUM("vds", "dedicated", "not-install"),
         allowNull: false,
     },
+    productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     cpuCoresCount: {
         type: DataTypes.INTEGER,
         allowNull: false,
