@@ -1,16 +1,33 @@
+require("./core/cron");
+
 const express = require("express");
 const ErrorHelper = require("./helpers/ErrorHelper");
+const MailHelper = require("./helpers/MailHelper");
+const DBHelper = require("./helpers/DBHelper");
 const apiv1 = express.Router();
 
 (async () => {
-    const DB = require("./helpers/DBHelper");
     try {
-        await DB.authenticate();
-        await DB.sync();
-        // require('./tests')
-        console.log("Connection has been established successfully.");
+        console.log("[DB] Test connection...");
+        await DBHelper.authenticate();
+        console.log("[DB] Connection successfully established.");
     } catch (error) {
-        console.error("Unable to connect to the database:", error);
+        console.error("[DB] Unable to connect to the database:", error);
+        process.exit(1);
+    }
+
+    console.log("[DB] Synchronizing tables...");
+    await DBHelper.sync();
+    console.log("[DB] Tables synced successfully.");
+    // require('./tests')
+
+    try {
+        console.log("[Mail] Test connection...");
+        await MailHelper.verify();
+        console.log("[Mail] Server is ready to take our messages.");
+    } catch (error) {
+        console.error("[Mail]", error);
+        process.exit(1);
     }
 })();
 
@@ -19,7 +36,9 @@ const langMiddleware = (req, res, next) => {
         req.params.lang !== undefined &&
         !["ru", "ua", "en"].includes(req.params.lang)
     ) {
-        res.status(400).json(ErrorHelper.error(0, "lang nf"));
+        res.status(400).json(
+            ErrorHelper.error(100, "Language parameter not specified")
+        );
         return;
     }
     next();
@@ -42,6 +61,7 @@ apiv1.map = function (a, route = "") {
 };
 
 apiv1.map({
+    "/subscribe": require("./handlers/subscribe"),
     "/:lang": {
         use: langMiddleware,
         "/isp": require("./handlers/isp"),

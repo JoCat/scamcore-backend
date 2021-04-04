@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "start-dev": "node .",
+    "start-dev": "nodemon",
     "start": "pm2 start src/index.js --name=web-backend -o logs/info.log -e logs/error.log --log-date-format \"DD-MM-YYYY HH:mm:ss\"",
     "deploy": "npm i && pm2 delete -s web-backend || ':' && npm run start",
     "prettier": "prettier --write \"src/**/*.*\""
@@ -22,12 +22,17 @@
   "homepage": "https://github.com/SpaceCore-Dev/web-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "cron": "^1.8.2",
     "dotenv": "^8.2.0",
+    "email-validator": "^2.0.4",
     "express": "^4.17.1",
+    "html-minifier": "^4.0.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "nodemailer": "^6.5.0",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "prettier": "^2.2.1"
   }
 }

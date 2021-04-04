@@ -31,8 +31,7 @@ async function getServers(req, res, type) {
         include: ServerGroupTranslate,
     });
 
-    const result = [];
-    vds.forEach((e) => {
+    const result = vds.map((e) => {
         const r = e.toJSON();
 
         r.cpu = cpus.find((c) => c.id === r.ServerCpuId).toJSON();
@@ -58,7 +57,7 @@ async function getServers(req, res, type) {
         });
         delete r.ServerStorages;
 
-        result.push(r);
+        return r;
     });
     res.json(result);
 }
