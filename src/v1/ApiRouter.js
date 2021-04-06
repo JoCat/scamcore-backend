@@ -72,7 +72,7 @@ apiv1.map({
         "/data-centers": require("./handlers/data-centers"),
         "/hosting": require("./handlers/hosting"),
         "/offers": require("./handlers/offers"),
-        "/advantages": require("./handlers/advantages"),
+        "/advantages/:page": require("./handlers/advantages"),
     },
 });
 
