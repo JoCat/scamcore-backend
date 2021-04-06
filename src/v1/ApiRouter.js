@@ -63,6 +63,7 @@ apiv1.map = function (a, route = "") {
 apiv1.map({
     "/subscribe": require("./handlers/subscribe"),
     "/modal-log": require("./handlers/modal-log"),
+    "/feedback": require("./handlers/feedback"),
     "/:lang": {
         use: langMiddleware,
         "/isp": require("./handlers/isp"),
