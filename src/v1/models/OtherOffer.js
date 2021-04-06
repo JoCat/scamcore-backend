@@ -6,6 +6,10 @@ const OtherOffer = sequelize.define("OtherOffer", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    page: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 });
 
 const OtherOfferTranslate = require("./translate/OtherOffer");

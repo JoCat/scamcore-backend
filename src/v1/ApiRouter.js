@@ -74,6 +74,7 @@ apiv1.map({
         "/offers": require("./handlers/offers"),
         "/advantages/:page": require("./handlers/advantages"),
         "/other-offers/:page": require("./handlers/other-offers"),
+        "/faq/:page": require("./handlers/faq"),
     },
 });
 
