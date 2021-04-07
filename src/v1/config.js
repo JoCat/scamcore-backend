@@ -19,6 +19,7 @@ const config = {
             pass: process.env.MAIL_AUTH_PASS,
         },
     },
+    recaptcha: process.env.RECAPTCHA,
 };
 
 module.exports = config;
