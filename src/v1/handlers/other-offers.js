@@ -21,7 +21,7 @@ async function getOtherOffers(req, res) {
         return {
             id: e.id,
             title: t.title,
-            list: t.list,
+            list: JSON.parse(t.list),
             link: t.link,
             url: e.url,
         };
